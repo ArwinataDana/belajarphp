@@ -6,6 +6,18 @@
     <title>phpTest</title>
 </head>
 <body>
-    <?php echo '<p>hellow world</p>'; ?>
+ <?php
+ $hima = "Creanova";
+ echo "Aku $hima";
+ echo "</br>";
+ $nama = "Dewa Made Arwinata Dana";
+ echo "$nama";
+ $umur = "20 Tahun";
+ echo "</br>";
+ $jabatan = "Ketua Hima periode 25/26";
+ $fakultas = "Sistem dan Teknologi Informasi";
+ echo "$jabatan $fakultas"; //karena berada di dalam string tidak perlu lagi pakek titik untuk penggabungnya
+ 
+ ?>
 </body>
 </html>
