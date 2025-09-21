@@ -3,9 +3,9 @@
 $kodebarang = 5;
 $hargabarang = 5000;
 
-echo "Kode barang" . $kodebarang;
+echo "Kode barang " . $kodebarang;
 echo "</br>";
-echo "dengan harga" . $hargabarang;
+echo "dengan harga " . $hargabarang;
 
 echo "</br> </br>";
 
