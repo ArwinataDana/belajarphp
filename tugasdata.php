@@ -83,14 +83,62 @@ $db   = "data_mahasiswa";
 
 $koneksi = mysqli_connect($host, $user, $pass, $db);
 
-// Cek apakah koneksi berhasil
 if (!$koneksi) {
     die("Koneksi gagal: " . mysqli_connect_error());
 }
 
 echo "Koneksi berhasil!";
 
-// Tutup koneksi
 mysqli_close($koneksi);
+
+echo "</br> </br>";
+
+// arithmetic operators
+$a = 20;
+$b = 5;
+
+echo "$a + $b = " . ($a + $b); // penjumlahan
+echo "</br>";
+echo "$a - $b = " . ($a - $b); // pengurangan
+echo "</br>";
+echo "$a * $b = " . ($a * $b); // perkalian
+echo "</br>";
+echo "$a / $b = " . ($a / $b); // pembagian
+echo "</br>";
+echo "$a % $b = " . ($a % $b); // modulus/sisa hasil bagi
+echo "</br>";
+
+echo "</br> </br>";
+
+//assignment operators
+
+// basic assignment
+$p = 5;
+echo "\$p = " . $p;
+$q = ($p = 10);
+echo "</br>" . "\n\$p = " . $p . "</br>";
+echo "\n\$q = " . $q;
+
+echo "</br> </br>";
+
+//combined assignment
+$s = 3;
+echo ($s += 4) . "</br>";
+echo ($s -= 2) . "</br>";
+echo ($s *= 2) . "</br>";
+echo ($s /= 5) . "</br>";
+echo ($s %= 9) . "</br>";
+
+echo "</br> </br>";
+
+//other combined
+$g = 5;
+$h = 3;
+echo ($g**=$h) . "</br>";
+echo $h**=2;
+
+echo "</br> </br>";
+
+//comparison operators
 
 ?>
