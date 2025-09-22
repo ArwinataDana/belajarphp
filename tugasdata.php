@@ -45,16 +45,19 @@ if ($isRaining) {
 if ($isSunny) {
     echo "GA YOSHI GAK ASIK.<br>";
 } else {
-    echo "TEKAD ADALAH KUNCI.<br>";
+    echo "TEKAD ADALAH KOENJI.<br>";
 }
 
 echo "</br> </br>";
 
 // tipe data array
 $teks = array("Musnahkan", "DPR", "korup", "adili", "dengan", "sangat", "adil");
+
 // for($i=0;$i<=6;$i++){
-//     echo "$teks[$i]";
+    // echo "$teks[$i]";
 // }
+// sintaks di atas fungsinya sama dengan yang di bawah bedanya tidak bisa berisi space 
+
 echo $teks[0] . " " . $teks[1] . " " . $teks[2] . " " . $teks[3] . " " . $teks[4] . " " . $teks[5] . " " . $teks[6];
 
 echo "</br> </br>";
@@ -72,6 +75,22 @@ echo "</br> </br>";
 
 // tipe data resouce
 
+// Membuat koneksi ke database
+$host = "localhost";
+$user = "root";
+$pass = "";
+$db   = "data_mahasiswa";
 
+$koneksi = mysqli_connect($host, $user, $pass, $db);
+
+// Cek apakah koneksi berhasil
+if (!$koneksi) {
+    die("Koneksi gagal: " . mysqli_connect_error());
+}
+
+echo "Koneksi berhasil!";
+
+// Tutup koneksi
+mysqli_close($koneksi);
 
 ?>
