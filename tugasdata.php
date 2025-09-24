@@ -30,8 +30,14 @@ echo "Total nilai pendidikan jasmani " . $nilaipenjas; // tampil nilai Penjas
 echo "</br> </br>";
 
 // tipe data string
+//double quotes
 $datastring = "AKU MC KALIAN SEMUA HANYA FIGURAN."; 
 echo $datastring; // menampilkan isi string
+
+//single quotes
+echo 'Anjay single quotes!!!'; //output single quotes
+$namastring = 'yokosho';
+echo 'variabel $namastring tidak akan di proses'; //variabel $namastring tidak akan di proses
 
 echo "</br> </br>";
 
