@@ -30,14 +30,21 @@ echo "Total nilai pendidikan jasmani " . $nilaipenjas; // tampil nilai Penjas
 echo "</br> </br>";
 
 // tipe data string
-//double quotes
+// double quotes (variabel bisa diproses)
 $datastring = "AKU MC KALIAN SEMUA HANYA FIGURAN."; 
 echo $datastring; // menampilkan isi string
 
-//single quotes
-echo 'Anjay single quotes!!!'; //output single quotes
+echo "</br> </br>"; 
+
+// single quotes (variabel tidak diproses)
+echo 'Anjay single quotes!!!'; // output teks biasa
 $namastring = 'yokosho';
-echo 'variabel $namastring tidak akan di proses'; //variabel $namastring tidak akan di proses
+echo 'variabel $namastring tidak akan di proses'; // tidak menampilkan isi variabel, hanya teks mentah
+
+echo "</br> </br>"; 
+
+// escape karakter (quotes di dalam quotes)
+echo '</br> it\'s my toy!!!' . "\n"; // gunakan backslash (\) untuk menampilkan tanda kutip di dalam string
 
 echo "</br> </br>";
 
@@ -46,22 +53,25 @@ $jokowi = true;  // bernilai true
 $prabowo = false;   // bernilai false
 
 if ($jokowi) {
-    // karena true, maka teks ini akan tampil
+    // kondisi true, maka teks ini tampil
     echo "LATIHAN YOSHIMITSU SAMPE TEPAR.<br>";
 }
 
 if ($prabowo) {
-    // tidak dieksekusi karena false
+    // kondisi false, maka tidak dijalankan
     echo "GA YOSHI GAK ASIK.<br>";
 } else {
-    // else jalan, menampilkan teks berikut
+    // karena false, maka bagian else dijalankan
     echo "TEKAD ADALAH KOENJI.<br>";
 }
 
 echo "</br> </br>";
 
 // tipe data array
-$teks = array("Musnahkan", "DPR", "korup", "adili", "dengan", "sangat", "adil");
+$teks = array("Musnahkan", "DPR", "korup", "adili", "dengan", "sangat", "adil"); // array indeks numerik
+$tulisan = array("pertama" => "HIDUP", "kedua" => "BLONDE"); // array asosiatif
+echo "$tulisan[pertama] " . "$tulisan[kedua]"; // akses array asosiatif
+echo "</br> </br>";
 
 // contoh for loop (dikomentari)
 // for($i=0;$i<=6;$i++){
@@ -74,7 +84,7 @@ echo $teks[0] . " " . $teks[1] . " " . $teks[2] . " " . $teks[3] . " " . $teks[4
 echo "</br> </br>";
 
 // tipe data null
-$nilai = null;
+$nilai = null; // variabel bernilai NULL
 
 if (is_null($nilai)) {
     // true karena $nilai = null
@@ -85,14 +95,13 @@ if (is_null($nilai)) {
 
 echo "</br> </br>";
 
-// tipe data resource
-// Membuat koneksi ke database
+// tipe data resource (contoh koneksi database)
 $host = "localhost"; // host server
 $user = "root";      // user database
 $pass = "";          // password database
 $db   = "data_mahasiswa"; // nama database
 
-$koneksi = mysqli_connect($host, $user, $pass, $db); // membuat koneksi
+$koneksi = mysqli_connect($host, $user, $pass, $db); // membuat koneksi ke database
 
 if (!$koneksi) {
     // jika gagal konek tampil error
@@ -105,20 +114,27 @@ mysqli_close($koneksi); // menutup koneksi database
 
 echo "</br> </br>";
 
+// casting tipe data (contoh dikomentari)
+// $umur = (int) "20";
+// $harga = (float) $angka;
+// $inibenar = (bool) $sesuatu;
+
+//  OPERATORS PHP
+
 // arithmetic operators
 $a = 20;
 $b = 5;
 
 // operasi aritmatika dasar
-echo "$a + $b = " . ($a + $b); // 25
+echo "$a + $b = " . ($a + $b); // penjumlahan
 echo "</br>";
-echo "$a - $b = " . ($a - $b); // 15
+echo "$a - $b = " . ($a - $b); // pengurangan
 echo "</br>";
-echo "$a * $b = " . ($a * $b); // 100
+echo "$a * $b = " . ($a * $b); // perkalian
 echo "</br>";
-echo "$a / $b = " . ($a / $b); // 4
+echo "$a / $b = " . ($a / $b); // pembagian
 echo "</br>";
-echo "$a % $b = " . ($a % $b); // 0 (sisa bagi)
+echo "$a % $b = " . ($a % $b); // modulus (sisa bagi)
 echo "</br>";
 
 echo "</br> </br>";
@@ -127,28 +143,28 @@ echo "</br> </br>";
 
 // basic assignment
 $p = 5; 
-echo "\$p = " . $p; // menampilkan 5
-$q = ($p = 10); // $p diubah jadi 10, lalu nilai juga disimpan ke $q
-echo "</br>" . "\n\$p = " . $p . "</br>"; // 10
-echo "\n\$q = " . $q; // 10 juga
+echo "\$p = " . $p; // menampilkan nilai p = 5
+$q = ($p = 10); // $p diubah jadi 10, lalu disimpan juga ke $q
+echo  "</br> \n\$p = " . $p . "</br>"; // hasil $p = 10
+echo "\n\$q = " . $q; // hasil $q = 10 juga
 
 echo "</br> </br>";
 
 // combined assignment
 $s = 3;
-echo ($s += 4) . "</br>"; // 3+4 = 7
-echo ($s -= 2) . "</br>"; // 7-2 = 5
-echo ($s *= 2) . "</br>"; // 5*2 = 10
-echo ($s /= 5) . "</br>"; // 10/5 = 2
-echo ($s %= 9) . "</br>"; // 2%9 = 2
+echo ($s += 4) . "</br>"; // $s = 3+4 = 7
+echo ($s -= 2) . "</br>"; // $s = 7-2 = 5
+echo ($s *= 2) . "</br>"; // $s = 5*2 = 10
+echo ($s /= 5) . "</br>"; // $s = 10/5 = 2
+echo ($s %= 9) . "</br>"; // $s = 2%9 = 2
 
 echo "</br> </br>";
 
-// other combined
+// other combined operators
 $g = 5;
 $h = 3;
-echo ($g**=$h) . "</br>"; // 5**3 = 125
-echo $h**=2; // 3**2 = 9
+echo ($g**=$h) . "</br>"; // $g = 5**3 = 125 (pangkat)
+echo $h**=2; // $h = 3**2 = 9
 
 echo "</br> </br>";
 
@@ -157,10 +173,10 @@ $r = 5;
 $w = '5';
 
 if ($r == $w){
-    echo 'r sama dengan w </br>'; // true karena nilainya sama
+    echo 'r sama dengan w </br>'; // true karena nilai sama
 }
 if ($r === $w){
-    echo 'r identik dengan w'; // false, tidak dieksekusi (tipe berbeda: int vs string)
+    echo 'r identik dengan w'; // false karena tipe beda (int vs string)
 }
 if ($r != $w){
     echo 'r tidak sama dengan w </br>'; // false
@@ -169,7 +185,7 @@ if ($r <> $w){
     echo 'r tidak sama dengan w </br>'; // false
 }
 if ($r !== $w){
-    echo 'r tidak identik dengan w </br>'; // true, karena tipe beda
+    echo 'r tidak identik dengan w </br>'; // true
 }
 if ($r < $w){
     echo 'r kurang dari w </br>'; // false
@@ -189,14 +205,14 @@ echo "</br> </br>";
 // increment & decrement operators
 $k = 2;
 echo $k . "\n </br>";   // cetak 2
-echo ++$k . "\n </br>"; // pre-increment, cetak 3
-echo --$k . "\n </br>"; // pre-decrement, cetak 2
-echo $k++ . "\n </br>"; // post-increment, cetak 2 tapi $k jadi 3
-echo $k-- . "\n </br>"; // post-decrement, cetak 3 tapi $k jadi 2 lagi
+echo ++$k . "\n </br>"; // pre-increment, tambah dulu baru cetak → 3
+echo --$k . "\n </br>"; // pre-decrement, kurang dulu baru cetak → 2
+echo $k++ . "\n </br>"; // post-increment, cetak 2 lalu $k jadi 3
+echo $k-- . "\n </br>"; // post-decrement, cetak 3 lalu $k jadi 2 lagi
 
 echo "</br> </br>";
 
-//Logical Operators
+// Logical Operators
 $aa = true;
 $bb = false;
 if ($aa and $bb){
@@ -232,24 +248,48 @@ if (!$aa){
 
 echo "</br> </br>";
 
-//string operators
-//cara 1
+// string operators
+// cara 1 (penggabungan string)
 $namadepan = "michael";
 $namabelakang = "jordhan";
 $namalengkap = $namadepan . " "  . $namabelakang;
-echo $namalengkap . "</br>"; // gabungan string depan + belakang
+echo $namalengkap . "</br>"; // hasil: "michael jordhan"
 
-
-//cara 2
+// cara 2 (penggabungan banyak string)
 $teks1 = "bapakku ";
 $teks2 = "garena ";
 $teks3 = "bapakmu apa?";
 $hasil = "oiii " . $teks1 . $teks2 . $teks3;
-echo $hasil; // gabungan beberapa string
+echo $hasil; // hasil: "oiii bapakku garena bapakmu apa?"
 
 echo "</br> </br>";
 
-//array comparasion operators
+// Array operators
+// UNION OPERATORS (menggabungkan array)
+$buah1 = ["apel", "jeruk", "mangga"];
+$buah2 = ["apel", "mangga", "buah naga"];
+$kombinasibuah = $buah1 + $buah2; // penggabungan array
+var_dump($kombinasibuah);
+
+echo "</br> </br>"; 
+
+// INTERSECTION OPERATORS (irisan array)
+$buah3 = ["apel", "jeruk", "mangga"];
+$buah4 = ["apel", "mangga", "buah naga"];
+$kombinasibuah1 = array_intersect($buah3,$buah4); // hanya ambil yang sama
+var_dump($kombinasibuah1);
+
+echo "</br> </br>"; 
+
+// DIFFERENCE OPERATORS (selisih array)
+$buah5 = ["apel", "jeruk", "mangga"];
+$buah6 = ["apel", "mangga", "buah naga"];
+$kombinasibuah2 = array_diff($buah5,$buah6); // hanya ambil beda
+var_dump($kombinasibuah2) . "</br>";
+
+echo "</br> </br>";
+
+// array comparison operators
 $satu = [4,5];
 $dua = [4,5];
 var_dump($satu == $dua); // true karena nilai sama
@@ -274,16 +314,15 @@ var_dump($tujuh !== $delapan); // true karena tipe berbeda (int vs string)
 
 echo "</br> </br>";
 
-//conditional assigment operators
-//contoh 1
+// conditional assignment operators
+// contoh 1 (ternary)
 $harga = 30000;
-$itumahal = ($harga >= 30000) ? 'yes' : 'no'; // operator ternary
+$itumahal = ($harga >= 30000) ? 'yes' : 'no'; // jika harga >= 30000 maka 'yes'
 echo "Apakah harga ini terbilang mahal? $itumahal";
 
 echo "</br>";
 
-//contoh 2
-$namapanggilan = $_GET['namapengguna'] ?? 'guest'; // null coalescing (jika kosong = guest)
-
+// contoh 2 (null coalescing)
+$namapanggilan = $_GET['namapengguna'] ?? 'guest'; // jika tidak ada input, default = guest
 echo "selamat datang, $namapanggilan!";
 ?>
