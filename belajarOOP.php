@@ -83,6 +83,6 @@ class akses extends manajemenUser
         }
     }
 }
-
+//ioeojdfiojg
 $searchnim = new akses();
 $searchnim->cariAkses(12345633);
