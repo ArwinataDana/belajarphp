@@ -34,4 +34,21 @@ class Mahasiswa extends Database
         }
         return $message;
     }
+
+    public function update($id)
+    {
+        $stmt = $this->conn->query("SELECT * FROM tb_mhs WHERE id_mhs='" . $id . "'");
+        if ($stmt->num_rows == 1) {
+            $row = $stmt->fetch_assoc();
+            $data['id'] = $row['id_mhs'];
+            $data['nama'] = $row['nama_mhs'];
+            $data['prodi'] = $row['prodi_mhs'];
+            $data['nim'] = $row['nim_mhs'];
+            $data['sts'] = $row['status_mhs'];
+            $message = $data;
+        } else {
+            $message = "Tida Ada Data";
+        }
+        return $message;
+    }
 }
